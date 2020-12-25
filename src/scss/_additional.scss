@@ -1,0 +1,73 @@
+// Addition styles.
+
+.burger {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  outline: none;
+  width: 30px;
+  height: 27px;
+  background: transparent;
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    width: 100%;
+    height: 3px;
+    background: var(--color-orange);
+    transition: background 0.3s, transform 0.3s, opacity 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-red);
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+    }
+
+    &:last-child {
+      width: 65%;
+    }
+  }
+
+  &:focus {
+    .burger__item {
+      &::before {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+.overtitle {
+  font-family: var(--font-bebas);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  color: var(--color-white);
+}
+
+.title {
+  font-family: var(--font-bebas);
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 80px;
+  letter-spacing: 3px;
+  color: var(--color-white);
+}
+
+.text {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: justify;
+  color: var(--color-white);
+}
